@@ -228,11 +228,13 @@ public class ProductServiceImpl implements ProductService {
                     Integer productId = (Integer) result[0];
                     String productName = (String) result[1];
                     Long sellQuantity = (Long) result[2];
+                    String productImage = (String) result[3];
 
                     return ProductSellDto.builder()
                             .id(productId)
                             .name(productName)
                             .sellQuantity(sellQuantity.intValue())
+                            .image(productImage)
                             .build();
                 })
                 .collect(Collectors.toList());
